@@ -25,6 +25,10 @@ class Validator {
     }
     return true;
   }
+
+  static checkHasDuplicate(inputs) {
+    return inputs.length === new Set(inputs).size;
+  }
 }
 
 module.exports = Validator;

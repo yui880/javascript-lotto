@@ -71,5 +71,11 @@ class App {
     }
   }
 }
+    if (!Validator.checkIsInRange(numbers)) {
+      Console.print(numbers);
+      throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
+    }
+  }
+}
 
 module.exports = App;
