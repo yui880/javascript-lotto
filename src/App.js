@@ -54,6 +54,10 @@ class App {
     this.#lottoGame.setLottoList(tempLottoList);
   }
 
+  #makeWinningArray(numString) {
+    return numString.split(',').map(Number);
+  }
+
   #getWinningNumbers() {
     const tempLottoGame = [];
     Console.readLine(CONSTANT.ENTER_WINNING_NUMBERS, (inputString) => {
@@ -64,8 +68,10 @@ class App {
     this.#lottoGame.setLottoList(tempLottoGame);
   }
 
-  #makeWinningArray(numString) {
-    return numString.split(',').map(Number);
+  #getBonusNumber() {
+    Console.readLine(CONSTANT.ENTER_BONUS_NUMBER, (input) => {
+      this.#lottoGame.setBonusNumber(Number(input));
+    });
   }
 }
 
