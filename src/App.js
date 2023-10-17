@@ -21,7 +21,6 @@ class App {
       this.#money = inputMoney;
       this.#calculateLottoQuantity();
     });
-    this.#calculateLottoQuantity();
   }
 
   #validateMoney(testMoney) {
@@ -41,6 +40,7 @@ class App {
 
   #buyLotto() {
     this.#getRandomLottoNumbers();
+    Prompt.printLottoLists(this.#lottoList);
   }
 
   #getRandomLottoNumbers() {
