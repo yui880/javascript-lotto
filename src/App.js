@@ -2,6 +2,7 @@ const { Console, Random } = require('@woowacourse/mission-utils');
 const CONSTANT = require('./Constant');
 const Validator = require('./Validator');
 const Lotto = require('./Lotto');
+const Prompt = require('./Prompt');
 
 class App {
   #money;
@@ -34,6 +35,7 @@ class App {
 
   #calculateLottoQuantity() {
     this.#lottoQuantity = this.#money / 1000;
+    Prompt.printQuantity(this.#lottoQuantity);
     this.#buyLotto();
   }
 
