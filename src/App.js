@@ -54,11 +54,18 @@ class App {
   #getWinningNumbers() {
     Console.readLine(CONSTANT.ENTER_WINNING_NUMBERS, (inputString) => {
       const tempArr = this.#makeWinningArray(inputString);
+      this.#validateWinningNumbers(tempArr);
     });
   }
 
   #makeWinningArray(numString) {
     return numString.split(',');
+  }
+
+  #validateWinningNumbers(numbers) {
+    if (!Validator.checkIsSixNums(numbers)) {
+      throw new Error(CONSTANT.ERROR_NOT_SIX_NUMS);
+    }
   }
 }
 

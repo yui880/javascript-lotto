@@ -10,6 +10,10 @@ class Validator {
   static checkIsThousands(input) {
     return input % 1000 === 0;
   }
+
+  static checkIsSixNums(inputs) {
+    return inputs.length === 6;
+  }
 }
 
 module.exports = Validator;
