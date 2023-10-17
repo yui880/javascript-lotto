@@ -15,6 +15,10 @@ class Lotto {
     }
   }
 
+  getLotto() {
+    return this.#numbers;
+  }
+
   sortLotto() {
     this.#numbers.sort((a, b) => a - b);
   }
