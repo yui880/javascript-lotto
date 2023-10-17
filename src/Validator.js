@@ -21,7 +21,7 @@ class Validator {
 
   static checkIsInRange(inputs) {
     for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i] < 0 || inputs[i] > 45) return false;
+      if (inputs[i] < 1 || inputs[i] > 45) return false;
     }
     return true;
   }
