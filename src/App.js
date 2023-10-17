@@ -59,13 +59,12 @@ class App {
   }
 
   #getWinningNumbers() {
-    const tempLottoGame = [];
     Console.readLine(CONSTANT.ENTER_WINNING_NUMBERS, (inputString) => {
       const tempArr = this.#makeWinningArray(inputString);
       const tempLotto = new Lotto(tempArr);
-      tempLottoGame.push(tempLotto);
+      this.#lottoGame.setLottoList(tempLotto);
+      this.#getBonusNumber();
     });
-    this.#lottoGame.setLottoList(tempLottoGame);
   }
 
   #getBonusNumber() {
