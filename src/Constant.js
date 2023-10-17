@@ -6,6 +6,7 @@ const CONSTANT = {
   ERROR_NOT_A_NUMBER: '[Error] 금액이 숫자가 아닙니다.',
   ERROR_NOT_THOUSANDS: '[Error] 금액이 1,000원 단위가 아닙니다.',
   ERROR_NOT_SIX_NUMS: '[ERROR] 로또 번호는 6개여야 합니다.',
+  LOTTO_NUMS: 6,
 };
 
 module.exports = CONSTANT;
