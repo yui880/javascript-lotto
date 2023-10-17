@@ -1,3 +1,6 @@
+const Validator = require('./Validator');
+const CONSTANT = require('./Constant');
+
 class LottoGame {
   #winningNumbers;
 
@@ -14,6 +17,7 @@ class LottoGame {
   }
 
   setBonusNumber(number) {
+    this.#validateBonusNumber(number);
     this.#bonusNumber = number;
   }
 
@@ -27,6 +31,12 @@ class LottoGame {
 
   getLottoList() {
     return this.#lottoList;
+  }
+
+  #validateBonusNumber(input) {
+    if (!Validator.checkIsInRange(input)) {
+      throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
+    }
   }
 }
 
