@@ -17,7 +17,7 @@ class Lotto {
     if (!Validator.checkIsAllNumber(numbers)) {
       throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
     }
-    if (!Validator.checkIsInRange(numbers)) {
+    if (!Validator.checkIsNumsInRange(numbers)) {
       throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
     }
     if (!Validator.checkHasDuplicate(numbers)) {

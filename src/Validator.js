@@ -19,10 +19,15 @@ class Validator {
     return inputs.filter((item) => !this.isNumber(item)).length <= 0;
   }
 
-  static checkIsInRange(inputs) {
+  static checkIsNumsInRange(inputs) {
     for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i] < 1 || inputs[i] > 45) return false;
+      if (!this.checkIsInRange(inputs[i])) return false;
     }
+    return true;
+  }
+
+  static checkIsInRange(input) {
+    if (input < 1 || input > 45) return false;
     return true;
   }
 
