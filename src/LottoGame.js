@@ -34,7 +34,7 @@ class LottoGame {
   }
 
   #validateBonusNumber(input) {
-    if (!Number.isNaN(input)) {
+    if (Number.isNaN(input)) {
       throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
     }
     if (!Validator.checkIsInRange(input)) {
