@@ -21,10 +21,10 @@ class App {
 
   #validateMoney(testMoney) {
     if (!Validator.checkIsNumber(testMoney)) {
-      throw new Error('[Error] 금액이 숫자가 아닙니다.');
+      throw new Error(CONSTANT.ERROR_NOT_A_NUMBER);
     }
     if (!Validator.checkIsThousands(testMoney)) {
-      throw new Error('[Error] 금액이 1,000원 단위가 아닙니다.');
+      throw new Error(CONSTANT.ERROR_NOT_THOUSANDS);
     }
   }
 
