@@ -15,6 +15,7 @@ class App {
     Console.readLine(CONSTANT.ENTER_MONEY, (inputMoney) => {
       this.#validateMoney(inputMoney);
       this.#money = inputMoney;
+      this.#calculateLottoQuantity();
     });
     this.#calculateLottoQuantity();
   }
@@ -30,6 +31,7 @@ class App {
 
   #calculateLottoQuantity() {
     this.#lottoQuantity = this.#money / 1000;
+    this.#buyLotto();
   }
 }
 
