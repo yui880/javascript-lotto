@@ -5,6 +5,8 @@ const Validator = require('./Validator');
 class App {
   #money;
 
+  #lottoQuantity;
+
   play() {
     this.#getMoney();
   }
@@ -14,6 +16,7 @@ class App {
       this.#validateMoney(inputMoney);
       this.#money = inputMoney;
     });
+    this.#calculateLottoQuantity();
   }
 
   #validateMoney(testMoney) {
@@ -23,6 +26,10 @@ class App {
     if (!Validator.checkIsThousands(testMoney)) {
       throw new Error('[Error] 금액이 1,000원 단위가 아닙니다.');
     }
+  }
+
+  #calculateLottoQuantity() {
+    this.#lottoQuantity = this.#money / 1000;
   }
 }
 
