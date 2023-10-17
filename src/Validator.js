@@ -1,6 +1,6 @@
 class Validator {
   static isNumber(input) {
-    return !isNaN(input);
+    return !Number.isNaN(input);
   }
 
   static checkIsNumber(input) {

@@ -8,6 +8,7 @@ const CONSTANT = {
   ERROR_NOT_SIX_NUMS: '[ERROR] 로또 번호는 6개여야 합니다.',
   ERROR_NOT_ALL_NUMBERS: '[ERROR] 당첨 번호가 숫자가 아닙니다.',
   ERROR_IS_NOT_IN_RANGE: '[ERROR] 당첨 번호는 1부터 45사이에 있는 숫자여야 합니다',
+  ERROR_HAS_DUPLICATE: '[ERROR] 당첨 번호 중에 중복된 번호가 있습니다.',
   LOTTO_NUMS: 6,
 };
 

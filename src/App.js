@@ -72,6 +72,9 @@ class App {
     if (!Validator.checkIsInRange(numbers)) {
       throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
     }
+    if (!Validator.checkHasDuplicate(numbers)) {
+      throw new Error(CONSTANT.ERROR_HAS_DUPLICATE);
+    }
   }
 }
 
