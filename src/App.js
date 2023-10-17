@@ -1,5 +1,5 @@
 const { Console } = require('@woowacourse/mission-utils');
-const Constant = require('./Constant');
+const CONSTANT = require('./Constant');
 const Validator = require('./Validator');
 
 class App {
@@ -12,7 +12,7 @@ class App {
   }
 
   #getMoney() {
-    Console.readLine(Constant.ENTER_MONEY, (inputMoney) => {
+    Console.readLine(CONSTANT.ENTER_MONEY, (inputMoney) => {
       this.#validateMoney(inputMoney);
       this.#money = inputMoney;
     });
