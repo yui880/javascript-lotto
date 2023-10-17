@@ -59,7 +59,7 @@ class App {
   }
 
   #makeWinningArray(numString) {
-    return numString.split(',');
+    return numString.split(',').map(Number);
   }
 
   #validateWinningNumbers(numbers) {
@@ -69,10 +69,7 @@ class App {
     if (!Validator.checkIsAllNumber(numbers)) {
       throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
     }
-  }
-}
     if (!Validator.checkIsInRange(numbers)) {
-      Console.print(numbers);
       throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
     }
   }
