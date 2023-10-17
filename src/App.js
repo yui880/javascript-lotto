@@ -41,6 +41,7 @@ class App {
   #buyLotto() {
     this.#getRandomLottoNumbers();
     Prompt.printLottoLists(this.#lottoList);
+    this.#getWinningNumbers();
   }
 
   #getRandomLottoNumbers() {
@@ -48,6 +49,16 @@ class App {
       const tempLotto = new Lotto(Random.pickUniqueNumbersInRange(1, 45, CONSTANT.LOTTO_NUMS));
       this.#lottoList.push(tempLotto);
     }
+  }
+
+  #getWinningNumbers() {
+    Console.readLine(CONSTANT.ENTER_WINNING_NUMBERS, (inputString) => {
+      const tempArr = this.#makeWinningArray(inputString);
+    });
+  }
+
+  #makeWinningArray(numString) {
+    return numString.split(',');
   }
 }
 
