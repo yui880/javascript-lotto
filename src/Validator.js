@@ -14,6 +14,17 @@ class Validator {
   static checkIsSixNums(inputs) {
     return inputs.length === 6;
   }
+
+  static checkIsAllNumber(inputs) {
+    return inputs.filter((item) => !this.isNumber(item)).length <= 0;
+  }
+
+  static checkIsInRange(inputs) {
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i] < 0 || inputs[i] > 45) return false;
+    }
+    return true;
+  }
 }
 
 module.exports = Validator;

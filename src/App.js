@@ -66,6 +66,9 @@ class App {
     if (!Validator.checkIsSixNums(numbers)) {
       throw new Error(CONSTANT.ERROR_NOT_SIX_NUMS);
     }
+    if (!Validator.checkIsAllNumber(numbers)) {
+      throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
+    }
   }
 }
 
