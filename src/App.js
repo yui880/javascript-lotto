@@ -61,21 +61,6 @@ class App {
   #makeWinningArray(numString) {
     return numString.split(',').map(Number);
   }
-
-  #validateWinningNumbers(numbers) {
-    if (!Validator.checkIsSixNums(numbers)) {
-      throw new Error(CONSTANT.ERROR_NOT_SIX_NUMS);
-    }
-    if (!Validator.checkIsAllNumber(numbers)) {
-      throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
-    }
-    if (!Validator.checkIsInRange(numbers)) {
-      throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
-    }
-    if (!Validator.checkHasDuplicate(numbers)) {
-      throw new Error(CONSTANT.ERROR_HAS_DUPLICATE);
-    }
-  }
 }
 
 module.exports = App;
