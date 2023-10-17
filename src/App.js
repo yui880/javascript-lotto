@@ -3,13 +3,14 @@ const CONSTANT = require('./Constant');
 const Validator = require('./Validator');
 const Lotto = require('./Lotto');
 const Prompt = require('./Prompt');
+const LottoGame = require('./LottoGame');
 
 class App {
   #money;
 
   #lottoQuantity;
 
-  #lottoList = [];
+  #lottoGame = new LottoGame();
 
   play() {
     this.#getMoney();
@@ -40,22 +41,27 @@ class App {
 
   #buyLotto() {
     this.#getRandomLottoNumbers();
-    Prompt.printLottoLists(this.#lottoList);
+    Prompt.printLottoLists(this.#lottoGame.getLottoList());
     this.#getWinningNumbers();
   }
 
   #getRandomLottoNumbers() {
+    const tempLottoList = [];
     for (let i = 0; i < this.#lottoQuantity; i++) {
       const tempLotto = new Lotto(Random.pickUniqueNumbersInRange(1, 45, CONSTANT.LOTTO_NUMS));
-      this.#lottoList.push(tempLotto);
+      tempLottoList.push(tempLotto);
     }
+    this.#lottoGame.setLottoList(tempLottoList);
   }
 
   #getWinningNumbers() {
+    const tempLottoGame = [];
     Console.readLine(CONSTANT.ENTER_WINNING_NUMBERS, (inputString) => {
       const tempArr = this.#makeWinningArray(inputString);
-      this.#validateWinningNumbers(tempArr);
+      const tempLotto = new Lotto(tempArr);
+      tempLottoGame.push(tempLotto);
     });
+    this.#lottoGame.setLottoList(tempLottoGame);
   }
 
   #makeWinningArray(numString) {
