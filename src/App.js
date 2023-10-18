@@ -74,8 +74,9 @@ class App {
 
   #makeLottoRank() {
     this.#lottoGame.calculateLottoRank();
-    Console.print(this.#lottoGame.getRank());
-    Console.print(this.#lottoGame.getRateOfReturn());
+    const rankData = [this.#lottoGame.getRank(), this.#lottoGame.getRateOfReturn()];
+    Prompt.printLottoResult(rankData);
+    Console.close();
   }
 }
 
