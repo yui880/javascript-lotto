@@ -6,8 +6,6 @@ const Prompt = require('./Prompt');
 const LottoGame = require('./LottoGame');
 
 class App {
-  #money;
-
   #lottoQuantity;
 
   #lottoGame = new LottoGame();
@@ -77,6 +75,7 @@ class App {
   #makeLottoRank() {
     this.#lottoGame.calculateLottoRank();
     Console.print(this.#lottoGame.getRank());
+    Console.print(this.#lottoGame.getRateOfReturn());
   }
 }
 

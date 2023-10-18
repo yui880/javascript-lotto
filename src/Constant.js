@@ -10,6 +10,7 @@ const CONSTANT = {
   ERROR_IS_NOT_IN_RANGE: '[ERROR] 로또 번호는 1부터 45사이에 있는 숫자여야 합니다',
   ERROR_HAS_DUPLICATE: '[ERROR] 로또 번호 중에 중복된 번호가 있습니다.',
   LOTTO_NUMS: 6,
+  MATCHES: [5000, 50000, 1500000, 30000000, 2000000000],
 };
 
 module.exports = CONSTANT;

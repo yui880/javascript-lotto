@@ -12,6 +12,8 @@ class LottoGame {
 
   #rank = [0, 0, 0, 0, 0];
 
+  #rateOfReturn;
+
   setWinningNumbers(numbers) {
     this.#winningNumbers = numbers;
   }
@@ -49,6 +51,10 @@ class LottoGame {
     return this.#rank;
   }
 
+  getRateOfReturn() {
+    return this.#rateOfReturn;
+  }
+
   #validateBonusNumber(input) {
     if (Number.isNaN(input)) {
       throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
@@ -68,6 +74,7 @@ class LottoGame {
       }
       this.#rank[tempRank - 3] += 1;
     }
+    this.#calculateRateOfReturn();
   }
 
   #findNumOfWinnings(numbers) {
@@ -80,6 +87,14 @@ class LottoGame {
       return;
     }
     this.#rank[2] += 1;
+  }
+
+  #calculateRateOfReturn() {
+    this.#rateOfReturn = ((this.#calculateSum() / this.#money) * 100).toFixed(2);
+  }
+
+  #calculateSum() {
+    return this.#rank.reduce((acc, cur, i) => acc + cur * CONSTANT.MATCHES[i], 0);
   }
 }
 
