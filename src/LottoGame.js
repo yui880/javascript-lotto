@@ -94,7 +94,7 @@ class LottoGame {
   }
 
   #calculateRateOfReturn() {
-    this.#rateOfReturn = ((this.#calculateSum() / this.#money) * 100).toFixed(2);
+    this.#rateOfReturn = ((this.#calculateSum() / this.#money) * 100).toFixed(1);
   }
 
   #calculateSum() {
