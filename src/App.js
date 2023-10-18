@@ -55,7 +55,7 @@ class App {
   }
 
   #makeWinningArray(numString) {
-    return numString.split(',').map(Number);
+    return numString.split(',');
   }
 
   #getWinningNumbers() {

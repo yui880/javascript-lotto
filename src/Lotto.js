@@ -5,9 +5,14 @@ class Lotto {
   #numbers;
 
   constructor(numbers) {
-    this.validate(numbers);
-    this.#numbers = numbers;
+    const tempNumbers = this.#changeToNumber(numbers);
+    this.validate(tempNumbers);
+    this.#numbers = tempNumbers;
     this.sortLotto();
+  }
+
+  #changeToNumber(numbers) {
+    return numbers.map(Number);
   }
 
   validate(numbers) {
