@@ -72,6 +72,10 @@ class LottoGame {
         this.#calculateBonusRank(this.#lottoList[i].getLotto());
         continue;
       }
+      if (tempRank === 6) {
+        this.#rank[4] += 1;
+        continue;
+      }
       this.#rank[tempRank - 3] += 1;
     }
     this.#calculateRateOfReturn();
