@@ -6,16 +6,16 @@ class Lotto {
 
   constructor(numbers) {
     const tempNumbers = this.#changeToNumber(numbers);
-    this.validate(tempNumbers);
+    this.#validate(tempNumbers);
     this.#numbers = tempNumbers;
-    this.sortLotto();
+    this.#sortLotto();
   }
 
   #changeToNumber(numbers) {
     return numbers.map(Number);
   }
 
-  validate(numbers) {
+  #validate(numbers) {
     if (numbers.length !== 6) {
       throw new Error(CONSTANT.ERROR_NOT_SIX_NUMS);
     }
@@ -34,7 +34,7 @@ class Lotto {
     return this.#numbers;
   }
 
-  sortLotto() {
+  #sortLotto() {
     this.#numbers.sort((a, b) => a - b);
   }
 }
