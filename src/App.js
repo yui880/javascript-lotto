@@ -70,7 +70,13 @@ class App {
   #getBonusNumber() {
     Console.readLine(CONSTANT.ENTER_BONUS_NUMBER, (input) => {
       this.#lottoGame.setBonusNumber(Number(input));
+      this.#makeLottoRank();
     });
+  }
+
+  #makeLottoRank() {
+    this.#lottoGame.calculateLottoRank();
+    Console.print(this.#lottoGame.getRank());
   }
 }
 

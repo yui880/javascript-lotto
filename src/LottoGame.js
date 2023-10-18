@@ -8,6 +8,8 @@ class LottoGame {
 
   #lottoList;
 
+  #rank = [0, 0, 0, 0, 0];
+
   setWinningNumbers(numbers) {
     this.#winningNumbers = numbers;
   }
@@ -33,6 +35,10 @@ class LottoGame {
     return this.#lottoList;
   }
 
+  getRank() {
+    return this.#rank;
+  }
+
   #validateBonusNumber(input) {
     if (Number.isNaN(input)) {
       throw new Error(CONSTANT.ERROR_NOT_ALL_NUMBERS);
@@ -40,6 +46,16 @@ class LottoGame {
     if (!Validator.checkIsInRange(input)) {
       throw new Error(CONSTANT.ERROR_IS_NOT_IN_RANGE);
     }
+  }
+
+  calculateLottoRank() {
+    for (let i = 0; i < this.#lottoList.length; i++) {
+      this.#rank[i] = this.#findNumOfWinnings(this.#lottoList[i].getLotto());
+    }
+  }
+
+  #findNumOfWinnings(numbers) {
+    return 2 * CONSTANT.LOTTO_NUMS - new Set([...this.#winningNumbers.getLotto(), ...numbers]).size;
   }
 }
 
