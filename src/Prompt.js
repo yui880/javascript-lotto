@@ -8,7 +8,8 @@ class Prompt {
 
   static printLottoLists(LottoList) {
     LottoList.forEach((lotto) => {
-      Console.print(lotto.getLotto());
+      const tempStr = `[${lotto.getLotto().join(', ')}]`;
+      Console.print(tempStr);
     });
   }
 }
