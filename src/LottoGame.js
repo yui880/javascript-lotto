@@ -50,12 +50,26 @@ class LottoGame {
 
   calculateLottoRank() {
     for (let i = 0; i < this.#lottoList.length; i++) {
-      this.#rank[i] = this.#findNumOfWinnings(this.#lottoList[i].getLotto());
+      const tempRank = this.#findNumOfWinnings(this.#lottoList[i].getLotto());
+      if (tempRank < 3) continue;
+      if (tempRank === 5) {
+        this.#calculateBonusRank(this.#lottoList[i].getLotto());
+        continue;
+      }
+      this.#rank[tempRank - 3] += 1;
     }
   }
 
   #findNumOfWinnings(numbers) {
     return 2 * CONSTANT.LOTTO_NUMS - new Set([...this.#winningNumbers.getLotto(), ...numbers]).size;
+  }
+
+  #calculateBonusRank(numbers) {
+    if (new Set([...this.#winningNumbers.getLotto(), this.#bonusNumber, ...numbers]).size === 7) {
+      this.#rank[3] += 1;
+      return;
+    }
+    this.#rank[2] += 1;
   }
 }
 
