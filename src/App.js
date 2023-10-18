@@ -62,7 +62,7 @@ class App {
     Console.readLine(CONSTANT.ENTER_WINNING_NUMBERS, (inputString) => {
       const tempArr = this.#makeWinningArray(inputString);
       const tempLotto = new Lotto(tempArr);
-      this.#lottoGame.setLottoList(tempLotto);
+      this.#lottoGame.setWinningNumbers(tempLotto);
       this.#getBonusNumber();
     });
   }
