@@ -2,6 +2,8 @@ const Validator = require('./Validator');
 const CONSTANT = require('./Constant');
 
 class LottoGame {
+  #money;
+
   #winningNumbers;
 
   #bonusNumber;
@@ -33,6 +35,14 @@ class LottoGame {
 
   getLottoList() {
     return this.#lottoList;
+  }
+
+  setMoney(money) {
+    this.#money = money;
+  }
+
+  getMoney() {
+    return this.#money;
   }
 
   getRank() {
